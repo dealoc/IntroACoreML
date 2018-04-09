@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-extension ViewController {
+extension ViewController: AVCapturePhotoCaptureDelegate {
     
     func miseEnPlaceCamera() {
         captureVideoPreviewLayer?.removeFromSuperlayer()
@@ -30,6 +30,7 @@ extension ViewController {
                                 if captureVideoPreviewLayer != nil {
                                     captureVideoPreviewLayer?.frame = cameraVue.bounds
                                     cameraVue.layer.addSublayer(captureVideoPreviewLayer!)
+                                    cameraVue.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(prendrePhoto)))
                                     captureSession!.startRunning()
                                 }
                             }
@@ -41,6 +42,32 @@ extension ViewController {
             }
         }
         
+    }
+    
+    @objc func prendrePhoto() {
+        if capturePhotoOutput != nil {
+            capturePhotoOutput?.capturePhoto(with: obtenirReglages(), delegate: self)
+        }
+        
+    }
+    
+    func obtenirReglages() -> AVCapturePhotoSettings {
+        let reglages = AVCapturePhotoSettings()
+        reglages.previewPhotoFormat = reglages.embeddedThumbnailPhotoFormat
+        return reglages
+    }
+    
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        if error == nil {
+            if let data = photo.fileDataRepresentation() {
+                photoChoisieImageView.image = UIImage(data: data)
+                
+            } else {
+                print("Le resultat ne donne pas de Data")
+            }
+        } else {
+            print(error!.localizedDescription)
+        }
     }
     
 }
