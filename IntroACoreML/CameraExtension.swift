@@ -25,7 +25,7 @@ extension ViewController {
                             if captureSession!.canAddOutput(capturePhotoOutput!) {
                                 captureSession?.addOutput(capturePhotoOutput!)
                                 captureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
-                                captureVideoPreviewLayer?.videoGravity = .resizeAspectFill
+                                captureVideoPreviewLayer?.videoGravity = .resizeAspect
                                 captureVideoPreviewLayer?.connection?.videoOrientation = .portrait
                                 if captureVideoPreviewLayer != nil {
                                     captureVideoPreviewLayer?.frame = cameraVue.bounds
