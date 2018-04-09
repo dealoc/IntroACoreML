@@ -14,6 +14,7 @@
 		202FDFCD207B6863004782C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 202FDFCB207B6863004782C7 /* LaunchScreen.storyboard */; };
 		202FDFD5207B6AB9004782C7 /* CameraExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FDFD4207B6AB9004782C7 /* CameraExtension.swift */; };
 		202FDFD7207B71BE004782C7 /* librairieExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FDFD6207B71BE004782C7 /* librairieExtension.swift */; };
+		202FDFDA207B734B004782C7 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 202FDFD9207B734B004782C7 /* MobileNet.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		202FDFCE207B6863004782C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		202FDFD4207B6AB9004782C7 /* CameraExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraExtension.swift; sourceTree = "<group>"; };
 		202FDFD6207B71BE004782C7 /* librairieExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = librairieExtension.swift; sourceTree = "<group>"; };
+		202FDFD9207B734B004782C7 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		202FDFC1207B6862004782C7 /* IntroACoreML */ = {
 			isa = PBXGroup;
 			children = (
+				202FDFD8207B7332004782C7 /* CoreMLModel */,
 				202FDFC2207B6862004782C7 /* AppDelegate.swift */,
 				202FDFC4207B6862004782C7 /* ViewController.swift */,
 				202FDFC6207B6862004782C7 /* Main.storyboard */,
@@ -68,6 +71,14 @@
 				202FDFD6207B71BE004782C7 /* librairieExtension.swift */,
 			);
 			path = IntroACoreML;
+			sourceTree = "<group>";
+		};
+		202FDFD8207B7332004782C7 /* CoreMLModel */ = {
+			isa = PBXGroup;
+			children = (
+				202FDFD9207B734B004782C7 /* MobileNet.mlmodel */,
+			);
+			path = CoreMLModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				202FDFC5207B6862004782C7 /* ViewController.swift in Sources */,
+				202FDFDA207B734B004782C7 /* MobileNet.mlmodel in Sources */,
 				202FDFC3207B6862004782C7 /* AppDelegate.swift in Sources */,
 				202FDFD5207B6AB9004782C7 /* CameraExtension.swift in Sources */,
 				202FDFD7207B71BE004782C7 /* librairieExtension.swift in Sources */,
