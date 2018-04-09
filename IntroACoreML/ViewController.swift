@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var cameraVue: UIView!
     @IBOutlet weak var photoChoisieImageView: UIImageView!
     @IBOutlet weak var predictionLabel: UILabel!
+    @IBOutlet weak var rotationBouton: UIButton!
+    @IBOutlet weak var libraire: UIButton!
+    
     
     var captureSession: AVCaptureSession?
     var capturePhotoOutput: AVCapturePhotoOutput?
@@ -23,9 +26,23 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         miseEnPlaceCamera()
+        rotationBouton.layer.cornerRadius = 5
+        libraire.layer.cornerRadius = 5
     }
 
+    @IBAction func librairieAction(_ sender: Any) {
+    }
+    
+    @IBAction func rotationAction(_ sender: Any) {
+        switch position {
+        case .front: position = .back
+        case .back: position = .front
+        case .unspecified: position = .back
 
+        }
+        miseEnPlaceCamera()
+    }
+    
 
 }
 

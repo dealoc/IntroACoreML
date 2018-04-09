@@ -46,7 +46,7 @@
                                         </view>
                                         <blurEffect style="light"/>
                                     </visualEffectView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0lr-bx-jm6">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0lr-bx-jm6">
                                         <rect key="frame" x="8" y="14" width="128" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="128" id="gft-AZ-udD"/>
@@ -75,21 +75,29 @@
                                     <constraint firstItem="j4B-8O-eGJ" firstAttribute="leading" secondItem="0lr-bx-jm6" secondAttribute="trailing" constant="8" id="xC1-c6-4BG"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jtk-gI-9N1">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jtk-gI-9N1">
                                 <rect key="frame" x="8" y="533" width="45" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="KJj-c4-nXD"/>
                                     <constraint firstAttribute="width" constant="45" id="Lvw-qa-Gtm"/>
                                 </constraints>
                                 <state key="normal" image="Changer_camera"/>
+                                <connections>
+                                    <action selector="rotationAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ibw-CI-EsY"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sk7-k5-Ie8">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sk7-k5-Ie8">
                                 <rect key="frame" x="361" y="533" width="45" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="0Nr-37-mIY"/>
                                     <constraint firstAttribute="width" constant="45" id="zWH-2l-8k3"/>
                                 </constraints>
                                 <state key="normal" image="librairy"/>
+                                <connections>
+                                    <action selector="librairieAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dbm-6P-AMP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -110,8 +118,10 @@
                     </view>
                     <connections>
                         <outlet property="cameraVue" destination="yZi-wE-oAV" id="TC9-sg-A86"/>
+                        <outlet property="libraire" destination="sk7-k5-Ie8" id="8q3-Uj-Xwc"/>
                         <outlet property="photoChoisieImageView" destination="0lr-bx-jm6" id="Nfr-GG-lee"/>
                         <outlet property="predictionLabel" destination="j4B-8O-eGJ" id="h3c-3n-tlT"/>
+                        <outlet property="rotationBouton" destination="Jtk-gI-9N1" id="Elo-vH-SXr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
