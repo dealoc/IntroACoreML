@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
@@ -14,7 +15,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var photoChoisieImageView: UIImageView!
     @IBOutlet weak var predictionLabel: UILabel!
     
-    
+    var captureSession: AVCaptureSession?
+    var capturePhotoOutput: AVCapturePhotoOutput?
+    var captureVideoPreviewLayer: AVCaptureVideoPreviewLayer?
+    var position = AVCaptureDevice.Position.back
     
     override func viewDidLoad() {
         super.viewDidLoad()
